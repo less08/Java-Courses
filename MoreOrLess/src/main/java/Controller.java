@@ -17,7 +17,7 @@ public class Controller {
 
 
         while (true) {
-            int scanned = scanneUserMessage(scanner, model.getMinBarrier(), model.getMaxBarrier());
+            int scanned = scanUserMessage(scanner, model.getMinBarrier(), model.getMaxBarrier());
             boolean isSecret = model.checkValue(scanned);
             if (isSecret) {
                 view.printMessage(View.CONGRATULATION + model.getSecretValue());
@@ -26,7 +26,7 @@ public class Controller {
         }
     }
 
-    private int scanneUserMessage(Scanner scanner, int minPossibleValue, int maxPossibleValue) {
+    private int scanUserMessage(Scanner scanner, int minPossibleValue, int maxPossibleValue) {
         view.printMessage(String.format(View.UNSUCCESSFUL_MESSAGE_PATTERN, minPossibleValue, maxPossibleValue));
         int value;
         while (true) {
